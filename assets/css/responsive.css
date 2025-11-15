@@ -1,0 +1,57 @@
+@media (max-width:701px) and (min-width:421px){
+    /*Menu*/
+    nav{
+        position: relative;
+        padding-right:0px ;
+    }
+    .mn-mobile{
+        display: flex;
+    }
+    #menu{
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 0%;
+        height: 100%;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--color-dark);
+        gap: 0px;
+    }
+    #menu li a{
+        display: block;
+        width: 100dvw;
+        padding: 25px 10px;
+    }
+}
+
+@media (max-width:420px){
+    /*Menu*/
+    nav{
+        position: relative;
+        padding-right:0px ;
+    }
+    .mn-mobile{
+        display: flex;
+    }
+    #menu{
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 0%;
+        height: 100%;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--color-dark);
+        gap: 0px;
+    }
+    #menu li a{
+        display: block;
+        width: 100dvw;
+        padding: 25px 10px;
+    }
+}
