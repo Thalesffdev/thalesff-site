@@ -7,6 +7,8 @@
     --font-contrast:"Raleway";
     --color-dark:#161616;
     --color-light:#fffffc;
+    --color-contrast-1:#44db9c;
+    --color-contrast-1-dark:#237955;
 }
 
 /*Presets Iniciais*/
@@ -20,7 +22,7 @@ body{
     color: var(--color-light);
     background-color: var(--color-dark);
     font-size: 16px;
-    line-height: 1.6px;
+    line-height: 1.6;
     font-weight: 400;
     font-family: var(--font-default);
 }
@@ -31,13 +33,55 @@ a{
 li{
     list-style: none;
 }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+
 /*Elementos padrões*/
 .container{
     width: 100%;
     max-width: 1440px;
     height: 100%;
     margin: auto;
-    padding: 20px;
+    padding: 30px;
+}
+
+.cta{
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 25px;
+    margin: 15px 0px;
+    border: 1px solid var(--color-contrast-1);
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: var(--font-contrast);
+    transition: all ease 0.5s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px  var(--color-contrast-1);
+}
+.cta::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(68, 219, 156, 0.1);
+    transition: all ease 0.5s;
+}
+.cta:hover::after{
+    width: 100%;
+}
+.cta span{
+    margin-left: 10px;
+    transition: transform .3s ease; /* ESSENCIAL */
+}
+.cta:hover span{
+    transform: translateX(5px);
 }
 
 /*Header*/
@@ -55,6 +99,7 @@ li{
     flex-direction: column;
 }
 
+
 /*Menu*/
 nav{
     width: 100%;
@@ -63,8 +108,10 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    background-color: transparent;
+    background-color: rgba(22,22,22,0.8);
     border-bottom: 1px solid #272727;
+    position: fixed;
+    z-index: 10;
 }
 .logo{
     padding: 15px;
@@ -89,9 +136,8 @@ nav{
     width: 28px;
     height: 2px;
     background-color: var(--color-light);
-    transition: .3s ease; /* ← A transição TEM que estar aqui */
+    transition: .3s ease; 
 }
-/* quando ativo */
 .mn-mobile.active .mn-bar:nth-child(1){
     transform: rotate(45deg) translate(5px, 5px);
     width: 22px;
@@ -110,16 +156,15 @@ nav{
     align-items: center;
     height: 100%;
     gap: 25px;
-    transition: all ease .3s;
 }
-#menu.show{
+#menu.showMobile{
     width: 70%;
     max-width: 320px;
 }
 #menu li a{
     display: inline-block;
     align-items: center;
-    padding: 15px  0px;
+    padding: 3px  0px;
     height: 100%;
     color: #cecece;
     position: relative;
@@ -135,10 +180,49 @@ nav{
     bottom: 0;
     width: 0%;
     height: 2px;
-    background: var(--color-light); 
+    background: var(--color-contrast-1); 
     transition: .3s ease;
 }
 #menu li:hover a::after{
     width: 100%;
     color: var(--color-dark);
+}
+
+
+
+
+/*Hero area*/
+.hero-area{
+    flex: 1;
+    margin-top: 100px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.hero-area span{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-contrast);
+}
+.hero-area h1{
+    line-height: 1.2;
+    font-size: 92px;
+    font-family: var(--font-contrast);
+    font-weight: 300;
+}
+.hero-area h2{
+    font-size: 52px;
+    font-family: var(--font-contrast);
+    font-weight: 500;
+   
+}
+.hero-area p{
+    margin: 20px 0px;
+    font-size: 18px;
+}
+.hero-cta{
+    display: flex;
+    gap: 20px;
 }
