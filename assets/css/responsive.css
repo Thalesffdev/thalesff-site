@@ -52,6 +52,9 @@
 }
 
 @media (max-width:490px){
+    #header{
+        height: auto;
+    }
     /*Menu*/
     nav{
         padding-right:0px ;

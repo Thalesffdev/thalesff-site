@@ -220,6 +220,7 @@ nav{
 }
 .hero-area p{
     margin: 20px 0px;
+    max-width: 550px;
     font-size: 18px;
 }
 .hero-cta{
