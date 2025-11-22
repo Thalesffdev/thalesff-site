@@ -24,6 +24,7 @@ body{
     font-size: 16px;
     line-height: 1.6;
     font-weight: 400;
+    overflow-x: hidden;
     font-family: var(--font-default);
 }
 a{
@@ -46,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     margin: auto;
     padding: 30px;
+    display: flex;
 }
 
 .cta{
@@ -61,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    box-shadow: 0px 0px 8px  var(--color-contrast-1);
+    box-shadow: 0px 0px 5px  var(--color-contrast-1);
 }
 .cta::after{
     content: "";
@@ -95,7 +97,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header .container{
     padding: 0px;
-    display: flex;
     flex-direction: column;
 }
 
@@ -108,7 +109,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    background-color: rgba(22,22,22,0.8);
+    background-color: var(--color-dark);
     border-bottom: 1px solid #272727;
     position: fixed;
     z-index: 10;
@@ -185,7 +186,6 @@ nav{
 }
 #menu li:hover a::after{
     width: 100%;
-    color: var(--color-dark);
 }
 
 
@@ -199,6 +199,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 .hero-area span{
@@ -226,4 +227,74 @@ nav{
 .hero-cta{
     display: flex;
     gap: 20px;
+}
+
+
+
+
+/*Sobre*/
+#sobre .container{
+ justify-content: space-between;
+ padding:50px 30px;
+}
+.sobre-left,
+.sobre-right{
+    padding: 15px;
+    display: flex;
+}
+
+.sobre-left{
+    flex: 1;
+    flex-direction: column;
+}
+.sobre-left h2{
+    font-family: var(--font-contrast);
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.sobre-left h2 span{
+    display: inline-flex;
+    padding: 5px;
+}
+.sobre-left p{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.sobre-left p::first-letter{
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.sobre-left .sobre-ctaArea{
+    margin: 20px 0px;
+    display: flex;
+    gap: 20px;
+}
+
+.sobre-right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.sobre-imgArea{
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    background-color:var(--color-contrast-1-dark);
+    padding: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.sobre-imgArea img{
+    max-width: 100%;
+    transition: all 0.3s ease;
+    transform: scale(1.5);
+}
+.sobre-imgArea:hover img {
+    transform: scale(1.7) rotate(-4deg);
 }
