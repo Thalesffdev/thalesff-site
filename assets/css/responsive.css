@@ -32,6 +32,9 @@
     }
 
     /*Hero-Area*/
+    .hero-area{
+        padding: 30px 0px;
+    }
     .hero-area h1{
         font-size: 72px;
     }
@@ -48,6 +51,11 @@
         width: 100%;
         max-width: 280px;
         justify-content: center;
+    }
+
+    /*Sobre*/
+    #sobre .container{
+        flex-direction: column;
     }
 }
 
@@ -83,6 +91,9 @@
     }
 
     /*Hero-Area*/
+    .hero-area{
+        padding: 30px 5px;
+    }
     .hero-area h1{
         font-size: 56px;
     }
@@ -99,5 +110,41 @@
         width: 100%;
         max-width: 280px;
         justify-content: center;
+    }
+
+    
+
+    /*Sobre*/
+    #sobre .container{
+        flex-direction: column;
+        padding: 50px 0px;
+    }
+    .sobre-left,
+    .sobre-right{
+        padding: 15px 15px;
+    }
+    .sobre-left h2{
+        font-size: 28px;
+        text-align: center;
+    }
+    .sobre-left p{
+        text-align: center;
+    }
+    .sobre-left .sobre-ctaArea{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sobre-ctaArea .cta{
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .sobre-right{
+        padding: 0px;
+    }
+    .sobre-imgArea{
+        width: 300px;
+        height: 300px;
     }
 }
