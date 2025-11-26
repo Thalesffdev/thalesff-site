@@ -21,7 +21,8 @@
     let modalLink = null
     let modalArea = modal.querySelector(".modal-area");
     
-    let pressTimer;
+    let pressTimer = null;
+    let pressedGrid = null;
 
 //Eventos
 
@@ -29,8 +30,11 @@
     menuMobile.addEventListener("pointerdown", toggleMenu);
     
     //Eventos grid e Modal
-    grids.forEach(grid =>{
+    grids.forEach(grid => {
         grid.addEventListener("pointerdown", openModal);
+        grid.addEventListener("pointerup", () => clearTimeout(pressTimer));
+        grid.addEventListener("pointerleave", () => clearTimeout(pressTimer));
+        grid.addEventListener("pointercancel", () => clearTimeout(pressTimer));
     });
     
     modal.addEventListener("pointerdown", closeModal);
@@ -46,17 +50,33 @@
 
     //Funções de modal 
 
-    function openModal(e){    
-        gridTitle = e.currentTarget.querySelector(".grid-item-thumb h3");
-        gridText = e.currentTarget.querySelector(".grid-item-thumb p");
-        gridThumb = e.currentTarget.querySelector(".grid-item img"); // elemento <img>
+    function openModal(e){
+        console.log(e.pointerType);
+
+        pressedGrid = e.currentTarget;
+
+        if (e.pointerType === "touch") {
+            pressTimer = setTimeout(() => {
+                openModalContent(pressedGrid); 
+            }, 1500);
+
+            return;
+        }
+
+        openModalContent(pressedGrid);
+    }
+
+    function openModalContent(grid){
+        gridTitle = grid.querySelector(".grid-item-thumb h3");
+        gridText = grid.querySelector(".grid-item-thumb p");
+        gridThumb = grid.querySelector(".grid-item img");
         gridLink = gridThumb.dataset.url;
 
         modalTitle = modal.querySelector(".modal-area .modal-infos h3");
         modalText = modal.querySelector(".modal-area .modal-infos p");
         modalLink = modal.querySelector(".modal-area .cta");
 
-        modalArea.style.background = `url(${gridThumb.src})`; // CORREÇÃO
+        modalArea.style.background = `url(${gridThumb.src})`;
         modalArea.style.backgroundSize = `cover`;
         modalArea.style.backgroundPosition = `top`;
 
@@ -64,10 +84,8 @@
         modalText.textContent = gridText.textContent;
 
         modalLink.href = gridLink;
-
         modal.classList.add("show");
     }
-
     function closeModal(e){
         e.target.classList.remove("show");
 
@@ -81,22 +99,7 @@
         modalLink = null
     }
 
-    function startPress(e) {
-        // Só ativa em telas touch
-        if (!isTouchDevice()) return;
-
-        pressTimer = setTimeout(() => {
-            openModal(e);
-        }, 400); // tempo para reconhecer pressão (400ms é bom)
-    }
-
-    function cancelPress() {
-        clearTimeout(pressTimer);
-    }
-
-    function isTouchDevice() {
-        return ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-    }
+    
 
 /*Obervador dos elementos Fades*/
     const observer = new IntersectionObserver((entries) => {
