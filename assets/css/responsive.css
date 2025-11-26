@@ -1,4 +1,4 @@
-@media (max-width:820px) and (min-width:421px){
+@media (max-width:1020px) and (min-width:701px){
     /*Header*/
     #header{
         height: auto;
@@ -57,9 +57,25 @@
     #sobre .container{
         flex-direction: column;
     }
+
+    .sobre-imgArea{
+        width: 350px;
+        height: 350px;
+    }
+    .sobre-right{
+        justify-content: center;
+    }
+
+    /*Projetos*/
+
+    .projetos-grid-area{
+        grid-template-columns: repeat(2, auto);
+
+    }
+
 }
 
-@media (max-width:490px){
+@media (max-width:700px){
     #header{
         height: auto;
     }
@@ -142,9 +158,47 @@
 
     .sobre-right{
         padding: 0px;
+        justify-content: center;
     }
     .sobre-imgArea{
-        width: 300px;
-        height: 300px;
+        width: 270px;
+        height: 270px;
+    }
+
+    /*Projetos*/
+    .projetos-title{
+        margin-bottom: 20px;
+    }
+    .projetos-title h2{
+        font-size: 28px;
+        text-align: center;
+    }
+    .projetos-title h3{
+        font-size: 16px;
+        text-align: center;
+    }
+    .projetos-grid-area{
+        grid-template-columns: repeat(1, auto);
+        gap: 50px;
+    }
+    .grid-item{
+        width: 280px;
+    }
+    .projetos-modal{
+        padding: 80px 10px;
+    }
+    .modal-area{
+        width: 100%;
+        background-size: cover;
+        background-position:  top center;
+    }
+    .modal-infos{
+        padding: 15px;
+    }
+    .modal-infos h3{
+        font-size: 20px;
+    }
+    .modal-infos p{
+        margin-bottom: 10px;
     }
 }

@@ -7,16 +7,77 @@
     //Elementos Fade
     const fades = document.querySelectorAll('.fade');
 
+    //Elementos Grid e Modal
+    const grids = document.querySelectorAll(".grid-item");
+    const modal = document.querySelector(".projetos-modal");
 
+    let gridTitle = null;
+    let gridText = null;
+    let gridThumb = null;
+    let gridLink = null;
 
+    let modalTitle = null;
+    let modalText = null;
+    let modalLink = null
+    let modalArea = modal.querySelector(".modal-area");
 
 //Eventos
 
     //Eventos Menu
-    menuMobile.addEventListener("click", toggleMenu);
-
+    menuMobile.addEventListener("pointerdown", toggleMenu);
     
-    /*Obervador dos elementos Fades*/
+    //Eventos grid e Modal
+    grids.forEach(grid =>{
+        grid.addEventListener("pointerdown", openModal);
+    });
+    
+    modal.addEventListener("pointerdown", closeModal);
+
+
+//Funções
+
+    //Funções Menu
+    function toggleMenu(){
+        menu.classList.toggle("showMobile");
+        menuMobile.classList.toggle("active");
+    }
+
+    function openModal(e){
+        gridTitle = e.currentTarget.querySelector(".grid-item-thumb h3");
+        gridText = e.currentTarget.querySelector(".grid-item-thumb p");
+        gridThumb = e.currentTarget.querySelector(".grid-item img"); // elemento <img>
+        gridLink = gridThumb.dataset.url;
+
+        modalTitle = modal.querySelector(".modal-area .modal-infos h3");
+        modalText = modal.querySelector(".modal-area .modal-infos p");
+        modalLink = modal.querySelector(".modal-area .cta");
+
+        modalArea.style.background = `url(${gridThumb.src})`; // CORREÇÃO
+        modalArea.style.backgroundSize = `cover`;
+        modalArea.style.backgroundPosition = `top`;
+
+        modalTitle.textContent = gridTitle.textContent;
+        modalText.textContent = gridText.textContent;
+
+        modalLink.href = gridLink;
+
+        modal.classList.add("show");
+    }
+
+    function closeModal(e){
+        e.target.classList.remove("show");
+
+        gridTitle = null;
+        gridText = null;
+        gridThumb = null;
+        gridLink = null;
+
+        modalTitle = null;
+        modalText =  null;
+        modalLink = null
+    }
+
+/*Obervador dos elementos Fades*/
     const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -27,11 +88,3 @@
     });
     
     fades.forEach(el => observer.observe(el));
-
-//Funções
-
-    //Funções Menu
-    function toggleMenu(){
-        menu.classList.toggle("showMobile");
-        menuMobile.classList.toggle("active");
-    }

@@ -33,9 +33,9 @@
                 </button>
 
                 <ul id="menu" class="fade fade-bottom slow">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Sobre Mim</a></li>
-                    <li><a href="#">Meus Trabalhos</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#projetos">Meus Trabalhos</a></li>
                     <li><a href="#">Entre em contato</a></li>
                 </ul>
             </nav>
@@ -59,32 +59,68 @@
     <section id="sobre">
         <div class="container">
             <div class="sobre-left">
-                <h2>Quem esta por trás do <span class="gradient-color">< codigo ></span> ?</h2>
+                <h2 class="fade fade-bottom medium">Quem está por trás do <span class="gradient-color">< codigo ></span> ?</h2>
 
-                <p>Muito prazer! Meu nome é Thales Fernandes, desenvolvedor Front-End focado em criar interfaces
+                <p  class="fade fade-left slow">Muito prazer! Meu nome é Thales Fernandes, desenvolvedor Front-End focado em criar interfaces
                 modernas, responsivas e intuitivas, unindo design, performance e boas práticas de código.</p>
 
-                <p>Eu amo trabalhar com tecnologia e estou sempre buscando me aprimorar na área, 
+                <p class="fade fade-right slow">Eu amo trabalhar com tecnologia e estou sempre buscando me aprimorar na área, 
                 além de me envolver em ambientes e com pessoas que proporcionem melhoria contínua, 
                 tanto para mim quanto para quem está ao meu redor.</p>
                 
-                <p>Atualmente, trabalho com tecnologias como HTML, CSS, JavaScript, Git e GitHub, e tenho uma 
+                <p class="fade fade-left slow">Atualmente, trabalho com tecnologias como HTML, CSS, JavaScript, Git e GitHub, e tenho uma 
                 base prática sólida na criação de landing pages e componentes interativos, como sliders 
                 e modais, usando código puro. Porém, esse é só o começo, estou sempre me desenvolvendo!</p>
 
                 <div class="sobre-ctaArea">
-                    <a href="#" class="cta">Meu curriculo</a>
-                    <a href="#" class="cta">Minhas Certificações</a>
+                    <a href="#" class="cta fade fade-left slow"">Meu curriculo</a>
+                    <a href="#" class="cta fade fade-right slow"">Minhas Certificações</a>
                 </div>
             </div>
             <div class="sobre-right">
-                <div class="sobre-imgArea">
+                <div class="sobre-imgArea fade fade-top slow"">
                     <img src="assets/midia/Thales.png" alt="Thales Fernandes de Faria">
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="projetos">
+        <div class="container">
+            <div class="projetos-title">
+                <h2 class="fade fade-left medium">Conheça o <span class="gradient-color">Meu trabalho!</span></h2>
+                <h3 class="fade fade-right medium">Clique nos projetos e veja, na prática, como eu posso ajudar você a alcançar os melhores resultados.</h3>
+            </div>
+           <div class="projetos-grid-area">
+                <div class="grid-item fade fade-top slow">
+                    <img src="assets/midia/projeto1.png" alt="Projeto 1" data-url="https://github.com/Thalesffdev/estudo-drag-and-drop"> 
+                    <div class="grid-item-thumb">
+                        <h3>Drag and Drop</h3>
+                        <p>Este projeto apresenta, de forma simples e funcional, como criar uma interface de upload por arrastar e soltar (Drag & Drop) utilizando apenas HTML, CSS e JavaScript puro, sem depender de bibliotecas externas.
+                        A aplicação reconhece arquivos de imagem e PDF, exibindo automaticamente uma pré-visualização quando possível, ou uma indicação visual apropriada de acordo com o tipo de arquivo enviado.</p>
+                    </div>
+                </div>
+                <div class="grid-item fade fade-top slow">
+                    <img src="assets/midia/projeto2.png" alt="Projeto 2" data-url="#">
+                    <div class="grid-item-thumb">
+                        <h3>Awax</h3>
+                        <p>O Awax é um projeto pessoal criado para treinar minhas habilidades
+                        em desenvolver landing pages modernas. Este projeto em breve estará disponível
+                        no meu GitHub.</p>
+                    </div>
+                </div> 
+           </div>
+           <div class="projetos-modal">
+                <div class="modal-area">
+                    <div class="modal-infos">
+                        <h3></h3>
+                        <p></p>
+                        <a href="" target="_blank" class="cta">Projeto completo</a>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </section>
     <script src="assets/js/script.js" defer></script>
 </body>
 </html>

@@ -18,13 +18,15 @@
     margin: 0px;
     padding: 0px;
 }
+body, html{
+    overflow-x: hidden;
+}
 body{
     color: var(--color-light);
     background-color: var(--color-dark);
     font-size: 16px;
     line-height: 1.6;
     font-weight: 400;
-    overflow-x: hidden;
     font-family: var(--font-default);
 }
 a{
@@ -112,7 +114,7 @@ nav{
     background-color: var(--color-dark);
     border-bottom: 1px solid #272727;
     position: fixed;
-    z-index: 10;
+    z-index: 5;
 }
 .logo{
     padding: 15px;
@@ -274,7 +276,7 @@ nav{
 .sobre-right{
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     padding: 10px;
 }
@@ -297,4 +299,124 @@ nav{
 }
 .sobre-imgArea:hover img {
     transform: scale(1.7) rotate(-4deg);
+}
+
+
+
+/*Projetos*/
+#projetos{
+    background-color: #252525;
+}
+#projetos .container{
+    flex-direction: column;
+    align-items: center;
+}
+.projetos-title{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.projetos-title h2{
+    font-family: var(--font-contrast);
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+.projetos-title h3{
+    font-size: 18px;
+    font-weight: 500;
+}
+.projetos-grid-area{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+    padding: 10px;
+}
+.grid-item{
+    width: 350px;
+    max-width: 350px;
+    height: 370px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.grid-item img{
+    object-fit: cover;
+    object-position: top center;
+    width: 100%;
+    height: 100%;
+    transition: .3 ease;
+}
+.grid-item-thumb{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 29, 29, 0.8);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: ease .5s;
+}
+.grid-item-thumb h3{
+    font-size: 22px;
+    font-family: var(--font-contrast);
+    margin-bottom: 10px;
+}
+.grid-item-thumb p{
+    height: 150px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.grid-item-thumb .cta{
+    width: max-content;
+}
+.grid-item:hover .grid-item-thumb{
+    opacity: 1;
+}
+
+.projetos-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.90);
+    padding: 30px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.6s ease;
+}
+.projetos-modal.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-area{
+    width: 80%;
+    height: auto;
+    background-color: var(--color-light);
+    cursor: auto;
+}
+.modal-infos{
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 29, 29, 0.8);
+    backdrop-filter: blur(4px);
+}
+.modal-infos h3{
+    font-size: 22px;
+    font-family: var(--font-contrast);
+    margin-bottom: 10px;
+}
+.modal-infos p{
+    max-width: 620px;
 }
