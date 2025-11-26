@@ -20,6 +20,8 @@
     let modalText = null;
     let modalLink = null
     let modalArea = modal.querySelector(".modal-area");
+    
+    let pressTimer;
 
 //Eventos
 
@@ -42,7 +44,9 @@
         menuMobile.classList.toggle("active");
     }
 
-    function openModal(e){
+    //Funções de modal 
+
+    function openModal(e){    
         gridTitle = e.currentTarget.querySelector(".grid-item-thumb h3");
         gridText = e.currentTarget.querySelector(".grid-item-thumb p");
         gridThumb = e.currentTarget.querySelector(".grid-item img"); // elemento <img>
@@ -75,6 +79,23 @@
         modalTitle = null;
         modalText =  null;
         modalLink = null
+    }
+
+    function startPress(e) {
+        // Só ativa em telas touch
+        if (!isTouchDevice()) return;
+
+        pressTimer = setTimeout(() => {
+            openModal(e);
+        }, 400); // tempo para reconhecer pressão (400ms é bom)
+    }
+
+    function cancelPress() {
+        clearTimeout(pressTimer);
+    }
+
+    function isTouchDevice() {
+        return ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     }
 
 /*Obervador dos elementos Fades*/
