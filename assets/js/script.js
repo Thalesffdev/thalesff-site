@@ -58,7 +58,7 @@
         if (e.pointerType === "touch") {
             pressTimer = setTimeout(() => {
                 openModalContent(pressedGrid); 
-            }, 1500);
+            }, 350);
 
             return;
         }
