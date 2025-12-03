@@ -31,7 +31,7 @@
     menuMobile.addEventListener("pointerdown", toggleMenu);
     
     grids.forEach((grid) => {
-        const gridButtons = grid.querySelectorAll("a");
+        const gridButtons = grid.querySelectorAll("article");
 
         gridButtons.forEach((button) => {
             button.addEventListener("pointerdown", openModal);
