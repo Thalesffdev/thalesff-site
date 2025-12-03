@@ -40,6 +40,12 @@
 
     modal.addEventListener("pointerdown", closeModal);
 
+
+    // Eventos Skill slide*/
+    for (let i = 0; i < slides.length; i++) {
+    const clone = slides[i].cloneNode(true);
+    track.appendChild(clone);
+    }
     
 
 //Funções
