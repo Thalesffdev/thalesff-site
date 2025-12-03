@@ -20,25 +20,27 @@
     let modalText = null;
     let modalLink = null
     let modalArea = modal.querySelector(".modal-area");
-    
-    let pressTimer = null;
-    let pressedGrid = null;
+
+    /*Elementos Skill slide*/
+    const track = document.querySelector(".skills-slider-track");
+    const slides = Array.from(track.children);
 
 //Eventos
 
     //Eventos Menu
     menuMobile.addEventListener("pointerdown", toggleMenu);
     
-    //Eventos grid e Modal
-    grids.forEach(grid => {
-        grid.addEventListener("pointerdown", openModal);
-        grid.addEventListener("pointerup", () => clearTimeout(pressTimer));
-        grid.addEventListener("pointerleave", () => clearTimeout(pressTimer));
-        grid.addEventListener("pointercancel", () => clearTimeout(pressTimer));
+    grids.forEach((grid) => {
+        const gridButtons = grid.querySelectorAll("a");
+
+        gridButtons.forEach((button) => {
+            button.addEventListener("pointerdown", openModal);
+        });
     });
-    
+
     modal.addEventListener("pointerdown", closeModal);
 
+    
 
 //Funções
 
@@ -48,8 +50,7 @@
         menuMobile.classList.toggle("active");
     }
 
-    //Funções de modal 
-
+    //Funções de modal
     function openModal(e){
         console.log(e.pointerType);
 
@@ -63,10 +64,6 @@
             return;
         }
 
-        openModalContent(pressedGrid);
-    }
-
-    function openModalContent(grid){
         gridTitle = grid.querySelector(".grid-item-thumb h3");
         gridText = grid.querySelector(".grid-item-thumb p");
         gridThumb = grid.querySelector(".grid-item img");
@@ -82,8 +79,21 @@
 
         modalTitle.textContent = gridTitle.textContent;
         modalText.textContent = gridText.textContent;
-
         modalLink.href = gridLink;
+
+        /*Tecnologias*/
+        const techList = gridThumb.dataset.tech.split(",").map(t => t.trim());
+        const techGrid = modal.querySelector(".modal-tec-grid");
+
+        techGrid.innerHTML = "";
+
+        techList.forEach(tech => {
+            const item = document.createElement("div");
+            item.classList.add("modal-grid-tec-item");
+            item.innerHTML = tech;
+            techGrid.appendChild(item);
+        });
+
         modal.classList.add("show");
     }
     function closeModal(e){
@@ -98,8 +108,6 @@
         modalText =  null;
         modalLink = null
     }
-
-    
 
 /*Obervador dos elementos Fades*/
     const observer = new IntersectionObserver((entries) => {

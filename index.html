@@ -1,25 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Configurações básicas -->
+    <!-- CONFIGURAÇÕES BÁSICAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--SEO-->
+    <!-- SEO -->
     <title>Thales Fernandes | Front-End Developer</title>
-    <meta name="description" content="Portfólio de Thales Fernandes — Desenvolvedor Front-End  focado em criar interfaces modernas, responsivas e de alta performance.">
-    
-    <!-- Palavras-chave (SEO) -->
-    <meta name="keywords" content="Desenvolvedor Front-End, Portfolio, HTML, CSS, JavaScript, React, GitHub Pages, UX, UI, desenvolvimento web, Thales Fernandes, Thalesffdev">
-
-    <!-- Autor -->
+    <meta name="description" content="Portfólio de Thales Fernandes — Desenvolvedor Front-End focado em criar interfaces modernas, responsivas e de alta performance.">
+    <meta name="robots" content="index, follow">
     <meta name="author" content="Thales Fernandes">
+    <meta name="theme-color" content="#161616">
 
-    <!--CSS-->
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://thalesff.com.br/">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Thales Fernandes | Front-End Developer">
+    <meta property="og:description" content="Portfólio de Thales Fernandes — Desenvolvedor Front-End especializado em criar interfaces modernas, responsivas e de alta performance.">
+    <meta property="og:url" content="https://thalesff.com.br/">
+    <meta property="og:site_name" content="Thales Fernandes">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="https://thalesff.com.br/assets/midia/thales-ogg.jpg">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thales Fernandes | Front-End Developer">
+    <meta name="twitter:description" content="Desenvolvedor Front-End focado em projetos modernos, escaláveis e de alta performance. Conheça meu portfólio!">
+    <meta name="twitter:image" content="https://thalesff.com.br/assets/midia/thales-ogg.jpg">
+    <meta name="twitter:url" content="https://thalesff.com.br/">
+
+    <!-- SCHEMA ORG - PERSON -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Thales Fernandes",
+            "jobTitle": "Front-End Developer",
+            "url": "https://thalesff.com.br",
+            "image": "https://thalesff.com.br/assets/midia/thales-ogg.jpg",
+            "description": "Desenvolvedor Front-End especializado em interfaces modernas, responsivas e de alta performance.",
+            "sameAs": [
+                "https://github.com/Thalesffdev",
+                "https://www.instagram.com/thalestff",
+                "https://www.linkedin.com/in/thalesffdev/"
+            ]
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Thales Fernandes | Front-End Developer",
+            "url": "https://thalesff.com.br/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://thalesff.com.br/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+
+    
+
+    <!-- PERFORMANCE: PRECONNECT PARA FONTES -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/effects.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Thalesffdev">
+    <link rel="manifest" href="assets/icons/site.webmanifest">
 </head>
 <body>
     <header id="header">
@@ -36,20 +95,20 @@
                     <li><a href="#header">Home</a></li>
                     <li><a href="#sobre">Sobre Mim</a></li>
                     <li><a href="#projetos">Meus Trabalhos</a></li>
-                    <li><a href="#">Entre em contato</a></li>
+                    <li><a href="#contato">Entre em contato</a></li>
                 </ul>
             </nav>
             <div class="hero-area">
                 <span class="fade fade-left medium">Olá eu sou</span>
                 <h1 class="fade fade-right slow">Thales Fernandes</h1>
-                <h2 class="gradient-color fade fade-left medium">Front-End Developer</h2>
+                <p class="sub-titulo gradient-color fade fade-left medium">Front-End Developer</p>
 
                 <p class="fade fade-bottom medium">Com profissionalismo e confiança, 
                 construo projetos de alto desempenho, modernos, escaláveis e 
                 focados em gerar resultados reais.</p>
 
                 <div class="hero-cta">
-                    <a href="#" class="cta fade fade-left slow">Vamos conversar <span>></span></a>
+                    <a href="https://w.app/thalesfernandesdev" target="_blank" rel="noopener noreferrer" class="cta fade fade-left slow">Vamos conversar <span>></span></a>
                     <a href="#projetos" class="cta fade fade-right slow">Meus trabalhos<span>></span></a>
                 </div>
             </div>
@@ -59,7 +118,7 @@
     <section id="sobre">
         <div class="container">
             <div class="sobre-left">
-                <h2 class="fade fade-bottom medium">Quem está por trás do <span class="gradient-color">< codigo ></span> ?</h2>
+                <h2 class="fade fade-bottom medium">Quem está por trás do <span class="gradient-color">&lt;codigo&gt;</span> ?</h2>
 
                 <p  class="fade fade-left slow">Muito prazer! Meu nome é Thales Fernandes, desenvolvedor Front-End focado em criar interfaces
                 modernas, responsivas e intuitivas, unindo design, performance e boas práticas de código.</p>
@@ -73,13 +132,13 @@
                 e modais, usando código puro. Porém, esse é só o começo, estou sempre me desenvolvendo!</p>
 
                 <div class="sobre-ctaArea">
-                    <a href="#" class="cta fade fade-left slow">Meu curriculo</a>
-                    <a href="#" class="cta fade fade-right slow">Minhas Certificações</a>
+                    <a href="assets/docs/Currículo - Thales Fernandes.pdf" target="_blank" class="cta fade fade-left slow">Meu curriculo</a>
+                    <a href="#contato" class="cta fade fade-right slow">Vamos conversar</a>
                 </div>
             </div>
             <div class="sobre-right">
-                <div class="sobre-imgArea fade fade-top slow"">
-                    <img src="assets/midia/Thales.png" alt="Thales Fernandes de Faria">
+                <div class="sobre-imgArea fade fade-top slow">
+                    <img src="assets/midia/Thales.png" loading="lazy" alt="Foto de Thales Fernandes, Desenvolvedor Front-End">
                 </div>
             </div>
         </div>
@@ -92,35 +151,134 @@
                 <h3 class="fade fade-right medium">Clique nos projetos e veja, na prática, como eu posso ajudar você a alcançar os melhores resultados.</h3>
             </div>
            <div class="projetos-grid-area">
-                <div class="grid-item fade fade-top slow">
-                    <img src="assets/midia/projeto1.png" alt="Projeto 1" data-url="https://github.com/Thalesffdev/estudo-drag-and-drop"> 
+                <article  class="grid-item fade fade-top slow">
+                    <img src="assets/midia/projeto1.png" 
+                        alt="Miniatura do projeto Drag and Drop desenvolvido com HTML, CSS e JavaScript" 
+                        data-url="https://github.com/Thalesffdev/estudo-drag-and-drop"
+                        data-tech="HTML, CSS, JavaScript"
+                        loading="lazy"> 
+
                     <div class="grid-item-thumb">
                         <h3>Drag and Drop</h3>
-                        <p>Este projeto apresenta, de forma simples e funcional, como criar uma interface de upload por arrastar e soltar (Drag & Drop) utilizando apenas HTML, CSS e JavaScript puro, sem depender de bibliotecas externas.
-                        A aplicação reconhece arquivos de imagem e PDF, exibindo automaticamente uma pré-visualização quando possível, ou uma indicação visual apropriada de acordo com o tipo de arquivo enviado.</p>
+                        <p>Este projeto apresenta, de forma simples e funcional, como criar uma 
+                        interface de thumbnail por arrastar e soltar (Drag & Drop) utilizando apenas HTML, CSS e JavaScript.    </p>
+
+                       <a href="" class="cta">Ver mais</a>
                     </div>
-                </div>
-                <div class="grid-item fade fade-top slow">
-                    <img src="assets/midia/projeto2.png" alt="Projeto 2" data-url="#">
+                </article>
+                <article  class="grid-item fade fade-top slow">
+                    <img src="assets/midia/projeto2.png" 
+                        alt="Miniatura do projeto Awax desenvolvido com HTML e CSS" 
+                        data-url="#"
+                        data-tech="HTML, CSS"
+                        loading="lazy">
+
                     <div class="grid-item-thumb">
                         <h3>Awax</h3>
                         <p>O Awax é um projeto pessoal criado para treinar minhas habilidades
                         em desenvolver landing pages modernas. Este projeto em breve estará disponível
                         no meu GitHub.</p>
+
+                        <a href="" class="cta">Ver mais</a>
                     </div>
-                </div> 
+                </article> 
            </div>
+
            <div class="projetos-modal">
                 <div class="modal-area">
                     <div class="modal-infos">
                         <h3></h3>
                         <p></p>
-                        <a href="" target="_blank" class="cta">Projeto completo</a>
+                        <a href="" target="_blank" rel="noopener noreferrer" class="cta">Projeto completo</a>
+
+                        <div class="modal-tec-area">
+                            <h4>Tecnologias Usadas:</h4>
+                            <div class="modal-tec-grid"></div>
+                        </div>
                     </div>
                 </div>
            </div>
         </div>
     </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="skills-slider fade fade-bottom medium">
+                <div class="skills-slider-track">
+                    <div class="skill-slide">
+                        <img src="assets/midia/html-5.png" alt="Icone do html5" loading="lazy">
+                        <p>HTML 5</p>
+                    </div>
+                    <div class="skill-slide">
+                        <img src="assets/midia/css-3.png" alt="Icone do css3" loading="lazy">
+                        <p>CSS 3</p>
+                    </div>
+                    <div class="skill-slide">
+                        <img src="assets/midia/js.png" alt="Icone do javascript" loading="lazy">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill-slide">
+                        <img src="assets/midia/git.png" alt="Icone do git" loading="lazy">
+                        <p>Git</p>
+                    </div>
+                    <div class="skill-slide">
+                        <img src="assets/midia/github.png" alt="Icone do git hub" loading="lazy">
+                        <p>Git Hub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" role="contentinfo">
+        <div class="container">
+            <div class="contato-title">
+                <h2 class="fade fade-left medium">Entre em contato e <span class="gradient-color">Vamos conversar!</span></h2>
+                <h3 class="fade fade-right medium">Caso tenha se interessado por mim ou pelo meu trabalho, me envie uma mensagem 
+                ou e-mail. Tenho certeza de que podemos construir algo incrível juntos.</h3>
+            </div>
+            <div class="contato-content">
+                <div class="contato-social-area">
+                    <div class="social-title fade fade-left medium">
+                        Minhas redes
+                    </div>
+                    <div class="social-content">
+                        <a href="https://w.app/thalesfernandesdev" target="_blank" rel="noopener noreferrer" class="contato-social-item fade fade-left slow">
+                            <span>Whatsapp</span>
+                            <img src="assets/midia/whatsapp.png"  loading="lazy" alt="Link para o Whatsapp de Thales Fernandes">
+                        </a>
+                        <a href="https://www.instagram.com/thalestff/" target="_blank" rel="noopener noreferrer" class="contato-social-item  fade fade-right slow">
+                            <span>Instagram</span>
+                            <img src="assets/midia/instagram.png"  loading="lazy" alt="Link para o Instagram de Thales Fernandes">
+                        </a>
+                        <a href="https://www.linkedin.com/in/thalesffdev/" target="_blank" rel="noopener noreferrer" class="contato-social-item  fade fade-left slow">
+                            <span>Linkedin</span>
+                            <img src="assets/midia/linkedin.png"  loading="lazy" alt="Link para o Linkedin de Thales Fernandes">
+                        </a>
+                        <a href="https://github.com/Thalesffdev" target="_blank" rel="noopener noreferrer" class="contato-social-item  fade fade-right slow">
+                            <span>Github</span>
+                            <img src="assets/midia/github.png" loading="lazy" alt="Link para o Git Hub de Thales Fernandes">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contato-infos-area">
+                    <div class="infos-title fade fade-right medium">
+                        Informações de contato
+                    </div>
+                    <address class="infos-content">
+                        <a href="mailto:thalesffdev@gmail.com" rel="noopener noreferrer" class="info-item  fade fade-left slow">
+                            <span>E-mail: Thalesffdev@gmail.com</span>
+                            <img src="assets/midia/email.png"  loading="lazy" alt="E-mail: thalesffdev@gmail.com">
+                        </a>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <small class="fade fade-bottom slow">&copy; 2025 Thales Fernandes. Todos os direitos reservados.</small>
+        </div>
+    </footer>
     <script src="assets/js/script.js" defer></script>
 </body>
 </html>
