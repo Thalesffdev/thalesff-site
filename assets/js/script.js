@@ -52,7 +52,17 @@
 
     //Funções de modal
     function openModal(e){
-        const grid = e.currentTarget.closest(".grid-item");
+        console.log(e.pointerType);
+
+        pressedGrid = e.currentTarget;
+
+        if (e.pointerType === "touch") {
+            pressTimer = setTimeout(() => {
+                openModalContent(pressedGrid); 
+            }, 350);
+
+            return;
+        }
 
         gridTitle = grid.querySelector(".grid-item-thumb h3");
         gridText = grid.querySelector(".grid-item-thumb p");
@@ -110,10 +120,3 @@
     });
     
     fades.forEach(el => observer.observe(el));
-
-/*Triplicando os slides de skills (Efeito infinito)*/
-for (let i = 0; i < 1; i++) { 
-    slides.forEach(slide => {
-        track.appendChild(slide.cloneNode(true));
-    });
-}
