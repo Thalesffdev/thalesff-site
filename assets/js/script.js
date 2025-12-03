@@ -31,7 +31,7 @@
     menuMobile.addEventListener("pointerdown", toggleMenu);
     
     grids.forEach((grid) => {
-        const gridButtons = grid.querySelectorAll("article");
+        const gridButtons = grid.querySelectorAll(".cta");
 
         gridButtons.forEach((button) => {
             button.addEventListener("pointerdown", openModal);
@@ -58,26 +58,22 @@
 
     //Funções de modal
     function openModal(e){
-        console.log(e.pointerType);
+        e.preventDefault(); // para evitar navegação do <a>
 
-        pressedGrid = e.currentTarget;
+        const pressedGrid = e.currentTarget.closest(".grid-item");
 
-        if (e.pointerType === "touch") {
-            pressTimer = setTimeout(() => {
-                openModalContent(pressedGrid); 
-            }, 350);
+        if (!pressedGrid) return;
 
-            return;
-        }
+        // Elementos do grid
+        const gridTitle = pressedGrid.querySelector(".grid-item-thumb h3");
+        const gridText = pressedGrid.querySelector(".grid-item-thumb p");
+        const gridThumb = pressedGrid.querySelector("img");
+        const gridLink = gridThumb.dataset.url;
 
-        gridTitle = grid.querySelector(".grid-item-thumb h3");
-        gridText = grid.querySelector(".grid-item-thumb p");
-        gridThumb = grid.querySelector(".grid-item img");
-        gridLink = gridThumb.dataset.url;
-
-        modalTitle = modal.querySelector(".modal-area .modal-infos h3");
-        modalText = modal.querySelector(".modal-area .modal-infos p");
-        modalLink = modal.querySelector(".modal-area .cta");
+        // Elementos do modal
+        const modalTitle = modal.querySelector(".modal-area .modal-infos h3");
+        const modalText = modal.querySelector(".modal-area .modal-infos p");
+        const modalLink = modal.querySelector(".modal-area .cta");
 
         modalArea.style.background = `url(${gridThumb.src})`;
         modalArea.style.backgroundSize = `cover`;
@@ -87,7 +83,7 @@
         modalText.textContent = gridText.textContent;
         modalLink.href = gridLink;
 
-        /*Tecnologias*/
+        /* Tecnologias */
         const techList = gridThumb.dataset.tech.split(",").map(t => t.trim());
         const techGrid = modal.querySelector(".modal-tec-grid");
 
@@ -96,14 +92,16 @@
         techList.forEach(tech => {
             const item = document.createElement("div");
             item.classList.add("modal-grid-tec-item");
-            item.innerHTML = tech;
+            item.textContent = tech;
             techGrid.appendChild(item);
         });
 
         modal.classList.add("show");
     }
     function closeModal(e){
-        e.target.classList.remove("show");
+        if (e.target === modal) {
+            modal.classList.remove("show");
+        }
 
         gridTitle = null;
         gridText = null;
