@@ -18,7 +18,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+body html{
+    overflow: hidden;
+}
 body{
     color: var(--color-light);
     background-color: var(--color-dark);
@@ -26,7 +28,6 @@ body{
     line-height: 1.6;
     font-weight: 400;
     font-family: var(--font-default);
-    overflow-x: clip; /* bloqueia sem permitir scroll */
 }
 a{
     text-decoration: none;
@@ -565,9 +566,11 @@ nav{
 
 
 /*Contato*/
+footer {
+    background-color: #252525;
+}
 footer .container{
     flex-direction: column;
-    background-color: #252525;
 }
 .contato-title{
     margin-bottom: 30px;
@@ -754,6 +757,11 @@ footer .copyright {
     /*Contato*/
     .contato-content{
         flex-direction: column;
+    }
+}
+@media(min-width:1440px){
+    nav{
+        width: 1440px;
     }
 }
 
