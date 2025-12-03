@@ -39,8 +39,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
-button{
-}
 
 /*Elementos padrões*/
 .container{
@@ -529,6 +527,9 @@ nav{
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+#skills .container{
+    padding: 30px 0px;
 }
 .skills-slider{
     width: 100%;
